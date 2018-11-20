@@ -23,7 +23,7 @@ git clone https://github.com/maminio/GalleryApp.git
 
 #### Windows
 
-- Install dependencies `brew install node watchman`
+- `echo "sdk.dir = C:\\Users\\$(whoami)\\AppData\\Local\\Android\\sdk" > android/local.properties`
 
   - *Make sure you have node version 4 or newer*
 
