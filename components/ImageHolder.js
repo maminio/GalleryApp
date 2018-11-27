@@ -7,7 +7,7 @@ const ImageHolder = (props) => {
   return (
     <View>
       <Image
-        source={{ uri: `https://picsum.photos/200/300?image=${dataSet[i].id}` }}
+        source={{ uri: `` }}
         style={{
           width: 250,
           height: 250,
@@ -15,8 +15,10 @@ const ImageHolder = (props) => {
           }}
       />
       <Text>
-        {dataSet[i].author}
+
       </Text>
     </View>
   )
 }
+
+export default ImageHolder;

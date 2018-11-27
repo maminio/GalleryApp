@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, ScrollView, Dimensions } from 'react-native';
+import ImageHolder from './ImageHolder';
 
 
 var {height, width} = Dimensions.get('window');
 
 const renderImages = (dataSet)=>{
   return dataSet.map((item)=>{
-
       return (
         <ImageHolder
 
