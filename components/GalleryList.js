@@ -9,7 +9,8 @@ const renderImages = (dataSet)=>{
   return dataSet.map((item)=>{
       return (
         <ImageHolder
-
+          author={item.author}
+          url={`https://picsum.photos/200/300?image=${item.id}`}
         />
       )
   })
