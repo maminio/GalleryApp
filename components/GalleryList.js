@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ScrollView, Dimensions } from 'react-native';
+import { View, ScrollView, Dimensions, Text } from 'react-native';
 import ImageHolder from './ImageHolder';
 
 
@@ -11,24 +11,59 @@ const renderImages = (dataSet)=>{
         <ImageHolder
           author={item.author}
           url={`https://picsum.photos/200/300?image=${item.id}`}
+          width={width/3}
         />
       )
   })
 
 }
 
+const renderHeader = ()=>{
+  return (
+    <View
+      style={{
+        width,
+         height: 90, backgroundColor: 'tomato',
+         justifyContent: 'center',
+         alignItems: 'center',
+
+        }}
+    >
+      <Text
+        style={{
+          color: 'white',
+          fontWeight: 'bold',
+          fontSize: 24
+        }}
+      >
+        Gallery
+      </Text>
+    </View>
+  )
+}
+
 
 const GalleryList = (props)=>{
   return (
-    <ScrollView
-      style={{
-        backgroundColor: 'tomato',
-        width: width
-        }}
-    >
-      {renderImages(props.dataSet)}
+    <View>
+      {renderHeader()}
+      <ScrollView
+        style={{
+          backgroundColor: 'white',
+          width: width
+          }}
+      >
 
-      </ScrollView>
+        <View
+          style={{
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+          }}
+        >
+        {renderImages(props.dataSet)}
+        </View>
+        </ScrollView>
+      </View>
   )
 }
 

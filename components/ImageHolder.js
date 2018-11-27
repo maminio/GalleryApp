@@ -4,19 +4,19 @@ import { View, Image, Text, TouchableOpacity } from 'react-native';
 
 
 const ImageHolder = (props) => {
-  console.log('IMAGE HOLDER PROPS ==> ',{props});
   return (
     <View>
       <Image
         source={{ uri: props.url }}
         style={{
-          width: 250,
-          height: 250,
+          width: props.width,
+          height: props.width,
           borderRadius: 15,
+          margin: 12
           }}
       />
       <Text>
-        props.author
+        {props.author}
       </Text>
     </View>
   )
