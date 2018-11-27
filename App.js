@@ -8,40 +8,20 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Image, ScrollView, Dimensions } from 'react-native';
-import dataSet from './imageData';
 import GalleryList from './components/GalleryList';
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+import dataSet from './imageData';
 
 
 type Props = {};
 export default class App extends Component<Props> {
   // ----> Comments here
 
-
-
-  renderImages(){
-    console.log({ dataSet })
-    const toPass = [];
-
-    for( let i = 0; i < dataSet.length; i++){
-
-      toPass.push(
-
-        )
-    }
-    return toPass;
-  }
-
   render() {
     return (
       <View style={styles.container}>
-        <GalleryList />
+        <GalleryList
+          dataSet={dataSet}
+        />
       </View>
     );
   }

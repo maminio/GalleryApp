@@ -4,14 +4,20 @@ import { View, ScrollView, Dimensions } from 'react-native';
 
 var {height, width} = Dimensions.get('window');
 
-const renderImages = ()=>{
-  return (
+const renderImages = (dataSet)=>{
+  return dataSet.map((item)=>{
 
-  )
+      return (
+        <ImageHolder
+
+        />
+      )
+  })
+
 }
 
 
-const GalleryList = ()=>{
+const GalleryList = (props)=>{
   return (
     <ScrollView
       style={{
@@ -19,7 +25,7 @@ const GalleryList = ()=>{
         width: width
         }}
     >
-      {this.renderImages()}
+      {renderImages(props.dataSet)}
 
       </ScrollView>
   )
