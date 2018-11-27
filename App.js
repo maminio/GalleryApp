@@ -8,53 +8,15 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Image, ScrollView} from 'react-native';
-import dataSet from './imageData';
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+import GalleryList from './components/GalleryList';
 
 type Props = {};
 export default class App extends Component<Props> {
-  // ----> Comments here
-
-
-
-  renderImages(){
-    console.log({ dataSet })
-    const toPass = [];
-
-    for( let i = 0; i < dataSet.length; i++){
-
-      toPass.push(
-        <View>
-        <Image
-          source={{ uri: `https://picsum.photos/200/300?image=${dataSet[i].id}` }}
-          style={{
-            width: 250,
-            height: 250,
-            borderRadius: 15,
-            }}
-        />
-        <Text>
-          {dataSet[i].author}
-        </Text>
-        </View>
-        )
-    }
-    return toPass;
-  }
-
+  
   render() {
     return (
       <View style={styles.container}>
-      <ScrollView>
-        {this.renderImages()}
-
-        </ScrollView>
+        <GalleryList />
       </View>
     );
   }
