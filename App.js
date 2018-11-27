@@ -7,8 +7,9 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Image, ScrollView} from 'react-native';
+import {Platform, StyleSheet, Text, View, Image, ScrollView, Dimensions } from 'react-native';
 import dataSet from './imageData';
+
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -16,6 +17,8 @@ const instructions = Platform.select({
     'Double tap R on your keyboard to reload,\n' +
     'Shake or press menu button for dev menu',
 });
+
+var {height, width} = Dimensions.get('window');
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -30,19 +33,7 @@ export default class App extends Component<Props> {
     for( let i = 0; i < dataSet.length; i++){
 
       toPass.push(
-        <View>
-        <Image
-          source={{ uri: `https://picsum.photos/200/300?image=${dataSet[i].id}` }}
-          style={{
-            width: 250,
-            height: 250,
-            borderRadius: 15,
-            }}
-        />
-        <Text>
-          {dataSet[i].author}
-        </Text>
-        </View>
+
         )
     }
     return toPass;
@@ -51,10 +42,7 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-      <ScrollView>
-        {this.renderImages()}
 
-        </ScrollView>
       </View>
     );
   }
