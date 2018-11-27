@@ -9,7 +9,7 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Image, ScrollView, Dimensions } from 'react-native';
 import dataSet from './imageData';
-
+import GalleryList from './components/GalleryList';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -18,7 +18,6 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-var {height, width} = Dimensions.get('window');
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -42,7 +41,7 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-
+        <GalleryList />
       </View>
     );
   }

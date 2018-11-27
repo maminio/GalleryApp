@@ -1,5 +1,14 @@
 import React from 'react';
-import { View, ScrollView } from 'react-native';
+import { View, ScrollView, Dimensions } from 'react-native';
+
+
+var {height, width} = Dimensions.get('window');
+
+const renderImages = ()=>{
+  return (
+
+  )
+}
 
 
 const GalleryList = ()=>{
@@ -15,3 +24,5 @@ const GalleryList = ()=>{
       </ScrollView>
   )
 }
+
+export default GalleryList;
