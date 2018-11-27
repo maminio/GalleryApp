@@ -72,6 +72,17 @@ rm -rf node_modules && yarn cache clean && yarn install
 
 ## Debugging
 
+### Android problem
+In my case the issue was that the emulator was making a request to:
+
+`http://10.0.2.2:8081/debugger-ui`
+
+instead of:
+
+`http://localhost:8081/debugger-ui` and the request was failing.
+
+To solve the issue: Before enabling remote debugging on your emulator, open http://localhost:8081/debugger-ui in chrome. Then enable remote debugging and go back to the chrome page where you should see your console logs.
+
 #### Remote debugger
 
 https://github.com/jhen0409/react-native-debugger
