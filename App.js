@@ -32,7 +32,7 @@ export default class App extends Component<Props> {
     return (
       <View style={styles.container}>
         <GalleryList
-          dataSet={this.state.dataSet}
+          dataSet={this.state.dataSet.sort((a,b)=> a.voteCount - b.voteCount).reverse()}
           updateDateSet={(newDataSet)=>{
               this.setState({
                 dataSet: newDataSet

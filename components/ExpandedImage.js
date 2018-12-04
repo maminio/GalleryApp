@@ -16,7 +16,7 @@ const renderImageDesc = (imageData)=>{
 }
 
 
-const renderVotingButtons = (onUpVote) => {
+const renderVotingButtons = (onUpVote, imageIndex) => {
   const buttonSize = 60;
   return (
     <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 50 }}>
@@ -45,7 +45,7 @@ const renderVotingButtons = (onUpVote) => {
         justifyContent: 'center', alignItems: 'center'
       }}
       onPress={()=>{
-        onUpVote()
+        onUpVote(imageIndex)
       }}
     >
       <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 18, textAlign: 'center' }}>
@@ -119,7 +119,7 @@ const ExpandedImage = ({ imageData, onClose, imageIndex, onUpVote, onDownVote })
     />
     {renderImageDesc(imageData)}
     {renderOpenOnWeb(imageData)}
-    {renderVotingButtons(onUpVote)}
+    {renderVotingButtons(onUpVote, imageIndex)}
     </View>
   )
 }
