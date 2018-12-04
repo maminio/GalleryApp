@@ -16,6 +16,40 @@ const renderImageDesc = (imageData)=>{
 }
 
 
+const renderVotingButtons = () => {
+  <View style={{ flexDirection: 'row', backgroundColor: 'yellow', flex: 1  }}>
+  <TouchableOpacity
+    style={{
+      width: 25,
+      height: 25,
+      backgroundColor: '#88a95b',
+
+    }}
+    onPress={()=>{
+
+    }}
+  >
+    <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 18, textAlign: 'center' }}>
+      D
+    </Text>
+  </TouchableOpacity>
+  <TouchableOpacity
+    style={{
+      width: 25,
+      height: 25,
+      backgroundColor: '#88a95b',
+
+    }}
+    onPress={()=>{
+    }}
+  >
+    <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 18, textAlign: 'center' }}>
+      U
+    </Text>
+  </TouchableOpacity>
+  </View>
+}
+
 const renderOpenOnWeb = (imageData)=>{
   return (
     <TouchableOpacity
@@ -79,6 +113,7 @@ const ExpandedImage = ({ imageData, onClose }) => {
     />
     {renderImageDesc(imageData)}
     {renderOpenOnWeb(imageData)}
+    {renderVotingButtons()}
     </View>
   )
 }

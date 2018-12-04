@@ -9,14 +9,32 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Image, ScrollView} from 'react-native';
 import GalleryList from './components/GalleryList';
+import dataSet from './imageData';
 
 type Props = {};
 export default class App extends Component<Props> {
-  
+
+  constructor(props){
+    super(props);
+
+    const newDataSet = dataSet.map(item => {
+        item.voteCount = 0;
+        return item;
+    })
+
+    this.state = {
+      dataSet: newDataSet,
+    }
+  }
+
+
   render() {
     return (
       <View style={styles.container}>
-        <GalleryList />
+        <GalleryList
+          dataSet={this.state.dataSet}
+
+        />
       </View>
     );
   }

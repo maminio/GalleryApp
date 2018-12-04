@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, Image, ScrollView, Dimensions, Fragment, Modal } from 'react-native';
-import dataSet from '../imageData';
 import ImageHolder from './ImageHolder';
 import ExpandedImage from './ExpandedImage';
 
@@ -22,7 +21,7 @@ export default class GalleryList extends React.Component {
 
     return (
         <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }}>
-          {dataSet.map((item,index)=>(
+          {this.props.dataSet.map((item,index)=>(
             <ImageHolder
               author={item.author}
               id={item.id}
