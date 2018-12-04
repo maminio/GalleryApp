@@ -16,7 +16,7 @@ const renderImageDesc = (imageData)=>{
 }
 
 
-const renderVotingButtons = () => {
+const renderVotingButtons = (onUpVote) => {
   const buttonSize = 60;
   return (
     <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 50 }}>
@@ -29,7 +29,7 @@ const renderVotingButtons = () => {
         justifyContent: 'center', alignItems: 'center'
       }}
       onPress={()=>{
-
+          onUpVote();
       }}
     >
       <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 18, textAlign: 'center' }}>
@@ -45,6 +45,7 @@ const renderVotingButtons = () => {
         justifyContent: 'center', alignItems: 'center'
       }}
       onPress={()=>{
+        onUpVote()
       }}
     >
       <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 18, textAlign: 'center' }}>
@@ -83,7 +84,7 @@ const renderOpenOnWeb = (imageData)=>{
   )
 }
 
-const ExpandedImage = ({ imageData, onClose }) => {
+const ExpandedImage = ({ imageData, onClose, imageIndex, onUpVote, onDownVote }) => {
   return (
     <View style={{ flex: 1, paddingTop: 50 }}>
     <TouchableOpacity
@@ -118,7 +119,7 @@ const ExpandedImage = ({ imageData, onClose }) => {
     />
     {renderImageDesc(imageData)}
     {renderOpenOnWeb(imageData)}
-    {renderVotingButtons()}
+    {renderVotingButtons(onUpVote)}
     </View>
   )
 }
