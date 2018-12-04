@@ -33,7 +33,11 @@ export default class App extends Component<Props> {
       <View style={styles.container}>
         <GalleryList
           dataSet={this.state.dataSet}
-
+          updateDateSet={(newDataSet)=>{
+              this.setState({
+                dataSet: newDataSet
+              })
+          }}
         />
       </View>
     );

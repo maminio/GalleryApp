@@ -13,6 +13,7 @@ export default class GalleryList extends React.Component {
     this.state = {
       modalVisible: false,
       imageData: null,
+      imageIndex: 0
     }
   }
 
@@ -31,6 +32,7 @@ export default class GalleryList extends React.Component {
                 this.setState({
                   imageData: item,
                   modalVisible: true,
+                  imageIndex: index
                 })
               }}
             />
@@ -81,6 +83,15 @@ export default class GalleryList extends React.Component {
               imageData: null,
               modalVisible: false,
             })
+          }}
+          imageIndex={this.state.imageIndex}
+          onUpVote={(index)=>{
+            const data = this.props.dataSet;
+            data[index].voteCount = this.props.dataSet[index].voteCount + 1
+            this.props.updateDateSet(data);
+          }}
+          onDownVote={()=>{
+
           }}
           imageData={this.state.imageData}
         />

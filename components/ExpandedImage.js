@@ -6,7 +6,7 @@ const renderImageDesc = (imageData)=>{
   return (
     <View style={{ justifyContent: 'center', alignItems: 'center' }}>
       <Text style={{ fontSize: 18, fontWeight: 'bold' }}>
-        Author
+        Author ({imageData.voteCount})
       </Text>
       <Text style={{ fontSize: 16 }}>
         {imageData.author}
@@ -17,37 +17,42 @@ const renderImageDesc = (imageData)=>{
 
 
 const renderVotingButtons = () => {
-  <View style={{ flexDirection: 'row', backgroundColor: 'yellow', flex: 1  }}>
-  <TouchableOpacity
-    style={{
-      width: 25,
-      height: 25,
-      backgroundColor: '#88a95b',
+  const buttonSize = 60;
+  return (
+    <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 50 }}>
+    <TouchableOpacity
+      style={{
+        width: buttonSize,
+        height: buttonSize,
+        borderRadius: buttonSize/2,
+        backgroundColor: 'tomato',
+        justifyContent: 'center', alignItems: 'center'
+      }}
+      onPress={()=>{
 
-    }}
-    onPress={()=>{
-
-    }}
-  >
-    <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 18, textAlign: 'center' }}>
-      D
-    </Text>
-  </TouchableOpacity>
-  <TouchableOpacity
-    style={{
-      width: 25,
-      height: 25,
-      backgroundColor: '#88a95b',
-
-    }}
-    onPress={()=>{
-    }}
-  >
-    <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 18, textAlign: 'center' }}>
-      U
-    </Text>
-  </TouchableOpacity>
-  </View>
+      }}
+    >
+      <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 18, textAlign: 'center' }}>
+        D
+      </Text>
+    </TouchableOpacity>
+    <TouchableOpacity
+      style={{
+        width: buttonSize,
+        height: buttonSize,
+        borderRadius: buttonSize/2,
+        backgroundColor: 'blue',
+        justifyContent: 'center', alignItems: 'center'
+      }}
+      onPress={()=>{
+      }}
+    >
+      <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 18, textAlign: 'center' }}>
+        U
+      </Text>
+    </TouchableOpacity>
+    </View>
+  )
 }
 
 const renderOpenOnWeb = (imageData)=>{
